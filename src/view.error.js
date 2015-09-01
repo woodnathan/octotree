@@ -8,12 +8,12 @@ function ErrorView($dom, store) {
     var $view = self.$view
       , $error = $view.find('.error').text('')
       , $token = $view.find('[name="token"]')
-      , oldToken = store.get(STORE.TOKEN, true)
+      , oldToken = store.get(STORE.TOKEN)
       , newToken = $token.val()
 
     if (!newToken) return $error.text('Token is required')
 
-    store.set(STORE.TOKEN, newToken, true, function() {
+    store.set(STORE.TOKEN, newToken, function() {
       var changes = {}
       changes[STORE.TOKEN] = [oldToken, newToken]
       $(self).trigger(EVENT.OPTS_CHANGE, changes)
@@ -28,7 +28,7 @@ ErrorView.prototype.show = function(err) {
     , $token = $view.find('input[name="token"]')
     , $submit = $view.find('button[type="submit"]')
     , $help = $submit.next()
-    , token = self.store.get(STORE.TOKEN, true)
+    , token = self.store.get(STORE.TOKEN)
 
   $view.find('.octotree_view_header').html(err.error)
   $view.find('.message').html(err.message)

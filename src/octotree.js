@@ -5,9 +5,8 @@ $(document).ready(function() {
 
   function setDefault(key, cb) {
     var storeKey = STORE[key]
-    var local = storeKey === STORE.TOKEN
-    store.get(storeKey, local, function(val) {
-      store.set(storeKey, val == null ? DEFAULTS[key] : val, local, cb)
+    store.get(storeKey, function(val) {
+      store.set(storeKey, val == null ? DEFAULTS[key] : val, cb)
     })
   }
 

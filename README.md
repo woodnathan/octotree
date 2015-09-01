@@ -26,16 +26,7 @@ Octotree uses [GitHub API](https://developer.github.com/v3/) to retrieve reposit
 
 When that happens, Octotree will ask for your [GitHub personal access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use). If you don't already have one, [create one](https://github.com/settings/tokens/new), then copy and paste it into the textbox. Note that the minimal scopes that should be granted are `public_repo` and `repo` (if you need access to private repositories).
 
-Alternatively, you can manually enter or update the token by following these steps:
-
-* Navigate to any GitHub repository
-* Open the Chrome (or Safari, Firefox) developer console
-* Execute the following line:
-```javascript
-localStorage.setItem('octotree.github_access_token', 'REPLACE WITH TOKEN')
-```
-
-Note: if you use GitHub Enterprise, each site will need its own access token. Therefore, Octotree stores access token on a per-site basis.
+Note: if you use GitHub Enterprise, each site will need its own access token.
 
 
 ## GitHub Enterprise
